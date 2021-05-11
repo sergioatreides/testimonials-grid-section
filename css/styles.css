@@ -1,0 +1,66 @@
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+/*     1. "Verified Graduate" has the same color as the person's name with 50% opacity
+    2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+}
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--light-grayish-blue);
+}
+.contenedor {
+    width: 85vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "articulo-1 articulo-1 articulo-2 articulo-3"
+                        "articulo-4 articulo-5 articulo-5 articulo-3";
+    grid-gap: 25px;
+}
+.articulo {
+    border-radius: 7px;
+    padding: 35px;
+    filter: drop-shadow(1px 1px 3px var(--very-dark-grayish-blue));
+}
+#articulo-1 {
+    grid-area: articulo-1;
+    background-color: var(--moderate-violet);
+    color: var(--white);
+}
+#articulo-2 {
+    grid-area: articulo-2;
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--white);
+}
+#articulo-3 {
+    grid-area: articulo-3;
+    background-color: var(--white);
+}
+#articulo-4 {
+    grid-area: articulo-4;
+    background-color: var(--white);
+}
+#articulo-5 {
+    grid-area: articulo-5;
+    background-color: var(--very-dark-blackish-blue);
+    color: var(--white);
+}
+.quote {
+    font-size: .9em;
+}
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
