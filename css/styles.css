@@ -1,8 +1,11 @@
 :root {
     --moderate-violet: hsl(263, 55%, 52%);
+    --moderate-violet-transparent: hsl(263, 55%, 52%, 0.5);
     --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-grayish-blue-transparent: hsl(217, 19%, 35%, 0.5);
     --very-dark-blackish-blue: hsl(219, 29%, 14%);
     --white: hsl(0, 0%, 100%);
+    --white-transparent: hsla(0, 0%, 100%, 0.5);
     --light-gray: hsl(0, 0%, 81%);
     --light-grayish-blue: hsl(210, 46%, 95%);
 /*     1. "Verified Graduate" has the same color as the person's name with 50% opacity
@@ -14,6 +17,7 @@
 }
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 14px;
     background-color: var(--light-grayish-blue);
 }
 .contenedor {
@@ -24,16 +28,23 @@ body {
     grid-template-areas: "articulo-1 articulo-1 articulo-2 articulo-3"
                         "articulo-4 articulo-5 articulo-5 articulo-3";
     grid-gap: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 .articulo {
     border-radius: 7px;
-    padding: 35px;
+    padding: 25px 30px;
     filter: drop-shadow(1px 1px 3px var(--very-dark-grayish-blue));
 }
 #articulo-1 {
     grid-area: articulo-1;
     background-color: var(--moderate-violet);
     color: var(--white);
+    background-image: url("../images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-size: 18%;
+    background-position-y: top;
+    background-position-x: 85%;
 }
 #articulo-2 {
     grid-area: articulo-2;
@@ -43,24 +54,64 @@ body {
 #articulo-3 {
     grid-area: articulo-3;
     background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
 }
 #articulo-4 {
     grid-area: articulo-4;
     background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
 }
 #articulo-5 {
     grid-area: articulo-5;
     background-color: var(--very-dark-blackish-blue);
     color: var(--white);
 }
+h1 {
+    margin: 20px 0px;
+}
 .quote {
     font-size: .9em;
+    filter: opacity(70%);
 }
-
-
+.portrait {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.photo {
+    border-radius: 100%;
+    border: 2px solid var(--white-transparent);
+    width: 35px;
+    margin: 0px 17px 0px 0px;
+}
+#articulo-5 .photo{
+    border-color: var(--moderate-violet-transparent);
+}
+#articulo-3 .photo,
+#articulo-4 .photo {
+    border-color: var(--very-dark-grayish-blue-transparent);
+}
+.author-id {
+    margin: 0px;
+}
+.verified {
+    filter: opacity(50%);
+}
 .attribution { 
     font-size: 11px; text-align: center; 
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+@media screen and (max-width: 650px) {
+    .contenedor {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "articulo-1" 
+                            "articulo-2"
+                            "articulo-4" 
+                            "articulo-5"
+                            "articulo-3";
+    }
 }
